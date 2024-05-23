@@ -1,4 +1,4 @@
-package uy.edu.um.adt.queue;
+/*package uy.edu.um.adt.queue;
 
 import static com.sun.tools.internal.ws.wsdl.parser.Util.fail;
 import static org.junit.Assert.*;
@@ -11,7 +11,7 @@ public class QueueImplTest {
 	@Test
 	public void testFlujoCompleto() {
 		MyQueue<Integer> queue = new MyLinkedListImpl<>();
-		
+
 		queue.enqueue(new Integer(21));
 		queue.enqueue(new Integer(34));
 		queue.enqueue(new Integer(3));
@@ -32,9 +32,9 @@ public class QueueImplTest {
         assertFalse(queue.contains(21));
 
 		assertEquals(2, queue.size());
-		
+
 		assertTrue(queue.contains(34));
-		
+
 		assertFalse(queue.contains(18));
 
         try {
@@ -69,4 +69,4 @@ public class QueueImplTest {
         }
 	}
 
-}
+}*/

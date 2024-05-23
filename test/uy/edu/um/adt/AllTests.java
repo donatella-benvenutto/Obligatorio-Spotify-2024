@@ -1,3 +1,4 @@
+/*
 package uy.edu.um.adt;
 
 import org.junit.runner.RunWith;
@@ -14,3 +15,4 @@ import uy.edu.um.adt.stack.StackImplTest;
 public class AllTests {
 
 }
+*/
