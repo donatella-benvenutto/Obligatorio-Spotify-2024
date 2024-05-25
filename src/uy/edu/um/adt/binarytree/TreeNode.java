@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package uy.edu.um.adt.binarytree;
 
 import uy.edu.um.adt.linkedlist.MyList;
@@ -136,8 +134,8 @@ public class TreeNode<K extends Comparable<K>, V> {
 		return right;
 	}
 
-	public void setRigth(TreeNode<K, V> rigth) {
-		this.right = rigth;
+	public void setRight(TreeNode<K, V> right) {
+		this.right = right;
 	}
 
 	public TreeNode<K, V> findMin() {

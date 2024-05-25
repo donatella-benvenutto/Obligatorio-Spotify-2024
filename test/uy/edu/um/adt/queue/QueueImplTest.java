@@ -1,7 +1,7 @@
-/*package uy.edu.um.adt.queue;
+package uy.edu.um.adt.queue;
 
-import static com.sun.tools.internal.ws.wsdl.parser.Util.fail;
 import static org.junit.Assert.*;
+//import static com.sun.tools.internal.ws.wsdl.parser.Util.fail;
 
 import org.junit.Test;
 import uy.edu.um.adt.linkedlist.MyLinkedListImpl;
@@ -69,4 +69,4 @@ public class QueueImplTest {
         }
 	}
 
-}*/
+}
