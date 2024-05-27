@@ -1,5 +1,6 @@
 package uy.edu.um.adt.hash;
 
+
 import org.apache.commons.math3.primes.Primes;
 
 public class MyHashImpl<K extends Comparable<K>, V> implements
