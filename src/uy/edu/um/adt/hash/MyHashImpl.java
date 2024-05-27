@@ -113,7 +113,8 @@ public class MyHashImpl<K extends Comparable<K>, V> implements
     }
 
     private void resize() {
-        int newSize = Primes.nextPrime(capacity * 2); // Calcula el siguiente número primo del doble del hash, así sigue siendo primo. Caso promedio es O(log^4(n)) peor caso es O(log^4(n)) según mí análisis de la documentación, lo cual como ya el resize de por sí es de O(n) consideramos que no afectará el rendimiento en general, ya que, solo es nlog(n) si n es par(lo q es imposible).
+        int newSize = Primes.nextPrime(capacity * 2);
+        /* Calcula el siguiente número primo del doble del hash, así sigue siendo primo. Caso promedio es O(log^4(n)) peor caso es O(k*log^3(n)) (donde k~log(n), k<= 1.08*log(n)+142 paratodo n hasta 2^24+1) según nuestro análisis, lo cual como ya el resize de por sí es de O(n) consideramos que no afectará el rendimiento en general.*/
         Entry<K, V>[] newTable = new Entry[newSize];
         int newSizeCounter = 0; // Contador para ir contabilizando el nuevo tamaño de la tabla
 

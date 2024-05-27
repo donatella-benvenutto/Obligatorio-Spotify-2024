@@ -10,58 +10,58 @@ import uy.edu.um.adt.linkedlist.MyLinkedListImpl;
 
 public class StackImplTest {
 
-	@Test
-	public void testFlujoCompleto() {
-		MyStack<Integer> colStack = new MyLinkedListImpl<>();
-		
-		colStack.push(new Integer(2));
-		colStack.push(new Integer(4));
-		colStack.push(new Integer(7));
+    @Test
+    public void testFlujoCompleto() {
+        MyStack<Integer> colStack = new MyLinkedListImpl<>();
 
-		assertEquals(new Integer(7), colStack.peek());
+        colStack.push(new Integer(2));
+        colStack.push(new Integer(4));
+        colStack.push(new Integer(7));
 
-		try {
+        assertEquals(new Integer(7), colStack.peek());
 
-			assertEquals(new Integer(7), colStack.pop());
+        try {
 
-		} catch (EmptyStackException e) {
+            assertEquals(new Integer(7), colStack.pop());
 
-			fail(e.getMessage());
+        } catch (EmptyStackException e) {
 
-		}
+            fail(e.getMessage());
 
-		assertEquals(new Integer(4), colStack.peek());
+        }
 
-		try {
+        assertEquals(new Integer(4), colStack.peek());
 
-			assertEquals(new Integer(4), colStack.pop());
+        try {
 
-		} catch (EmptyStackException e) {
+            assertEquals(new Integer(4), colStack.pop());
 
-			fail(e.getMessage());
+        } catch (EmptyStackException e) {
 
-		}
+            fail(e.getMessage());
 
-		try {
+        }
 
-			assertEquals(new Integer(2), colStack.pop());
+        try {
 
-		} catch (EmptyStackException e) {
+            assertEquals(new Integer(2), colStack.pop());
 
-			fail(e.getMessage());
+        } catch (EmptyStackException e) {
 
-		}
-		try {
-			
-			colStack.pop();
-			
-			fail("El stack deberia estar vacio");
+            fail(e.getMessage());
 
-		} catch (EmptyStackException e) {
-			
-			assertTrue(true);
+        }
+        try {
 
-		}
-	}
+            colStack.pop();
+
+            fail("El stack debería estar vacío");
+
+        } catch (EmptyStackException e) {
+
+            assertTrue(true);
+
+        }
+    }
 
 }

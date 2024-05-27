@@ -26,7 +26,7 @@ public class LinkedListImplTest {
 
         assertFalse(list.contains(12));
 
-        list.remove(12); // si trata de eliminar un elemento que no existe deja la lista como esta
+        list.remove(12); // si trata de eliminar un elemento que no existe deja la lista como está
 
         assertEquals(4, list.size());
 
