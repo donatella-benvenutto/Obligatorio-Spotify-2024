@@ -108,9 +108,4 @@ public class MySearchBinaryTreeImpl<K extends Comparable<K>, V> implements
 
         return inOrderTraverse;
     }
-
-    public int size() {
-        return size(root);
-    }
-
 }
