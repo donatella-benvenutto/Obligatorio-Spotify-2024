@@ -1,10 +1,9 @@
 package uy.edu.um.entities;
 
 import com.opencsv.bean.CsvBindByName;
+import uy.edu.um.adt.linkedlist.MyList;
 
-import java.util.List;
-
-public class SpotifyTrack {
+public class spotifyTrack {
     @CsvBindByName(column = "spotify_id")
     private String spotifyId;
 
@@ -81,9 +80,9 @@ public class SpotifyTrack {
     private int timeSignature;
 
     // Additional field to store the split artists
-    private List<String> artistList;
+    private MyList<String> artistList;
 
-    public SpotifyTrack(String spotifyId, String name, String artists, int dailyRank, int dailyMovement, int weeklyMovement, String country, String snapshotDate, int popularity, boolean isExplicit, int durationMs, String albumName, String albumReleaseDate, double danceability, double energy, int key, double loudness, int mode, double speechiness, double acousticness, double instrumentalness, double liveness, double valence, double tempo, int timeSignature, List<String> artistList) {
+    public spotifyTrack(String spotifyId, String name, String artists, int dailyRank, int dailyMovement, int weeklyMovement, String country, String snapshotDate, int popularity, boolean isExplicit, int durationMs, String albumName, String albumReleaseDate, double danceability, double energy, int key, double loudness, int mode, double speechiness, double acousticness, double instrumentalness, double liveness, double valence, double tempo, int timeSignature, MyList<String> artistList) {
         this.spotifyId = spotifyId;
         this.name = name;
         this.artists = artists;
@@ -312,11 +311,11 @@ public class SpotifyTrack {
         this.timeSignature = timeSignature;
     }
 
-    public List<String> getArtistList() {
+    public MyList<String> getArtistList() {
         return artistList;
     }
 
-    public void setArtistList(List<String> artistList) {
+    public void setArtistList(MyList<String> artistList) {
         this.artistList = artistList;
     }
 

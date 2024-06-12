@@ -5,6 +5,8 @@ import uy.edu.um.adt.queue.MyQueue;
 import uy.edu.um.adt.stack.EmptyStackException;
 import uy.edu.um.adt.stack.MyStack;
 
+import java.util.List;
+
 public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
 
     private Node<T> first;
@@ -231,5 +233,13 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
         }
 
         return valueToReturn;
+    }
+
+    public static <T> MyLinkedListImpl<T> parseFromJavaList(List<T> javaList) {
+        MyLinkedListImpl<T> myList = new MyLinkedListImpl<>();
+        for (T element : javaList) {
+            myList.add(element);
+        }
+        return myList;
     }
 }
