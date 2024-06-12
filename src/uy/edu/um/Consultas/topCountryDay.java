@@ -18,13 +18,13 @@ public class topCountryDay {
         MyList<spotifyTrack> sortedTracks = sortTracksByRank(filteredTracks);
 
         MyList<String> topSongs = new MyLinkedListImpl<>();
-        for (int i = 0; i < Math.min(10, sortedTracks.size()); i++) {
+        for (int i = 0; i < 10; i++) {
             spotifyTrack track = sortedTracks.get(i);
             topSongs.add("Rank: " + track.getDailyRank() + ", Song: " + track.getName() + ", Artist(s): "+ track.getArtistList().parseMylisttoString());
         }
         return topSongs;
     }
-
+   //bubblesort
     private static MyList<spotifyTrack> sortTracksByRank(MyList<spotifyTrack> tracks) {
         int n = tracks.size();
         for (int i = 0; i < n - 1; i++) {
