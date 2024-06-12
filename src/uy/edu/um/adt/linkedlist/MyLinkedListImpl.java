@@ -7,7 +7,7 @@ import uy.edu.um.adt.stack.MyStack;
 
 import java.util.List;
 
-public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
+public class MyLinkedListImpl<T> implements MyList<T>{
 
     private Node<T> first;
 
@@ -149,8 +149,8 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
 
             } else { // resto de los casos
 
-                    beforeSearchValue.setNext(searchValue.getNext());
-                    searchValue.setNext(null);
+                beforeSearchValue.setNext(searchValue.getNext());
+                searchValue.setNext(null);
 
             }
 
@@ -190,54 +190,38 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
         return size;
     }
 
-    // Operaciones particulares a Queue
+    public void addToPosition(T value, int position) {
+        if (value != null) {
+            Node<T> elementToAdd = new Node<>(value);
+            Node<T> temp = this.first;
+            int tempPosition = 0;
 
-    @Override
-    public void enqueue(T value) {
-        addToBeginning(value);
-    }
-
-    @Override
-    public T dequeue() throws EmptyQueueException {
-        if (this.last == null) { // si la queue esta vacia
-
-            throw new EmptyQueueException();
+            if (position == 0) {
+                addToBeginning(value);
+            } else if (position == size()) {
+                addToTheEnd(value);
+            } else if (position > 0 && position < size()) {
+                while (temp != null && tempPosition != position - 1) {
+                    temp = temp.getNext();
+                    tempPosition++;
+                }
+                elementToAdd.setNext(temp.getNext());
+                temp.setNext(elementToAdd);
+            }
         }
-
-        return removeLast();
     }
-
-    // Operaciones particulares a Stack
-
-    @Override
-    public void push(T value) {
-        addToTheEnd(value);
-    }
-
-    @Override
-    public T pop() throws EmptyStackException {
-        if (this.last == null) { // si la pila esta vacia
-
-            throw new EmptyStackException();
+    public String parseMylisttoString() {
+        StringBuilder sb = new StringBuilder();
+        Node<T> temp = this.first;
+        while (temp != null) {
+            sb.append(temp.getValue().toString());
+            temp = temp.getNext();
         }
-
-        return removeLast();
+        return sb.toString();
     }
-
-    @Override
-    public T peek() {
-        T valueToReturn = null;
-
-        if (this.last != null) {
-            valueToReturn = this.last.getValue();
-        }
-
-        return valueToReturn;
-    }
-
-    public static <T> MyLinkedListImpl<T> parseFromJavaList(List<T> javaList) {
-        MyLinkedListImpl<T> myList = new MyLinkedListImpl<>();
-        for (T element : javaList) {
+    public MyList<T> parseFromJavaList(List<T> list) {
+        MyList<T> myList = new MyLinkedListImpl<>();
+        for (T element : list) {
             myList.add(element);
         }
         return myList;

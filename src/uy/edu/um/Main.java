@@ -37,6 +37,7 @@ public class Main {
                 }
                 System.out.println(track);
             }
+            MyList<spotifyTrack> Tracks = parseFromJavaList(tracks);
         } catch (Exception e) {
             e.printStackTrace();
         }

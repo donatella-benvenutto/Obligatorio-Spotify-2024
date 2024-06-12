@@ -5,14 +5,14 @@ import org.apache.commons.math3.primes.Primes;
 
 public class MyHashImpl<K extends Comparable<K>, V> implements
         MyHash<K, V> {
-    private static final int INITIAL_CAPACITY = 23;
+    private static final int INITIAL_CAPACITY = 997;
     private static final double LOAD_FACTOR = 0.75;
 
     private Entry<K, V>[] table;
     private int size;
     private int capacity;
 
-    static class Entry<K, V> {
+    public static class Entry<K, V> {
         final K key;
         V value;
 
@@ -20,11 +20,13 @@ public class MyHashImpl<K extends Comparable<K>, V> implements
             this.key = key;
             this.value = value;
         }
+        public K getKey() {return key;}
+        public V getValue() {return value;}
     }
-
     public Entry<K, V>[] getTable() {
         return table;
     }
+
 
     public void setTable(Entry<K, V>[] table) {
         this.table = table;

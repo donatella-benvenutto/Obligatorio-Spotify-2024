@@ -17,4 +17,5 @@ public interface MySearchBinaryTree<K extends Comparable<K>, V> {
 
 	MyList<K> inOrder();
 
+	int size();
 }

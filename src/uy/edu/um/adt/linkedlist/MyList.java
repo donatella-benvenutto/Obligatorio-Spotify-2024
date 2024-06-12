@@ -1,5 +1,7 @@
 package uy.edu.um.adt.linkedlist;
 
+import java.util.List;
+
 public interface MyList<T> {
 
     void add(T value);
@@ -12,4 +14,9 @@ public interface MyList<T> {
 
     int size();
 
+    void addToPosition(T value, int position);
+
+    public String parseMylisttoString();
+
+    public MyList<T> parseFromJavaList(List<T> list);
 }
