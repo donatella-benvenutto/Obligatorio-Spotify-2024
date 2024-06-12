@@ -16,7 +16,7 @@ public interface MyList<T> {
 
     void addToPosition(T value, int position);
 
-    public String parseMylisttoString();
+    String parseMylisttoString();
 
-    public MyList<T> parseFromJavaList(List<T> list);
+    MyList<T> parseFromJavaList(List<T> list);
 }

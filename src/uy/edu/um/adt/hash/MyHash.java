@@ -17,6 +17,6 @@ public interface MyHash<K extends Comparable<K>, V> {
     int getCapacity();
     public MyHashImpl.Entry<K, V>[] getTable();
 
-    public K getKey();
-    public V getValue();
+    //public K getKey();
+    //public V getValue();
 }

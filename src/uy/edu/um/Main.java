@@ -13,8 +13,6 @@ import java.util.List;
 import uy.edu.um.adt.linkedlist.MyList;
 import uy.edu.um.entities.spotifyTrack;
 
-import static uy.edu.um.adt.linkedlist.MyLinkedListImpl.parseFromJavaList;
-
 public class Main {
     public static void main(String[] args) {
         String csvFile = "data.csv";

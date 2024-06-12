@@ -20,8 +20,8 @@ public class MyHashImpl<K extends Comparable<K>, V> implements
             this.key = key;
             this.value = value;
         }
-        public K getKey() {return key;}
-        public V getValue() {return value;}
+        //public K getKey() {return key;}
+        //public V getValue() {return value;}
     }
     public Entry<K, V>[] getTable() {
         return table;
