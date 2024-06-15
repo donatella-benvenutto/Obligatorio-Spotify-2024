@@ -1,85 +1,33 @@
 package uy.edu.um.entities;
 
-import com.opencsv.bean.CsvBindByName;
 import uy.edu.um.adt.linkedlist.MyList;
 
 public class spotifyTrack {
-    @CsvBindByName(column = "spotify_id,")
     private String spotifyId;
-
-    @CsvBindByName(column = "name")
     private String name;
-
-    @CsvBindByName(column = "artists")
-    private String artists;  // This will initially store the artists as a single string
-
-    @CsvBindByName(column = "daily_rank")
-    private int dailyRank;
-
-    @CsvBindByName(column = "daily_movement")
-    private int dailyMovement;
-
-    @CsvBindByName(column = "weekly_movement")
-    private int weeklyMovement;
-
-    @CsvBindByName(column = "country")
+    private String artists;
+    private Integer dailyRank;
+    private Integer dailyMovement;
+    private Integer weeklyMovement;
     private String country;
-
-    @CsvBindByName(column = "snapshot_date")
     private String snapshotDate;
-
-    @CsvBindByName(column = "popularity")
-    private int popularity;
-
-    @CsvBindByName(column = "is_explicit")
-    private boolean isExplicit;
-
-    @CsvBindByName(column = "duration_ms")
-    private int durationMs;
-
-    @CsvBindByName(column = "album_name")
+    private Integer popularity;
+    private Boolean isExplicit;
+    private Integer durationMs;
     private String albumName;
-
-    @CsvBindByName(column = "album_release_date")
     private String albumReleaseDate;
-
-    @CsvBindByName(column = "danceability")
-    private double danceability;
-
-    @CsvBindByName(column = "energy")
-    private double energy;
-
-    @CsvBindByName(column = "key")
-    private int key;
-
-    @CsvBindByName(column = "loudness")
-    private double loudness;
-
-    @CsvBindByName(column = "mode")
-    private int mode;
-
-    @CsvBindByName(column = "speechiness")
-    private double speechiness;
-
-    @CsvBindByName(column = "acousticness")
-    private double acousticness;
-
-    @CsvBindByName(column = "instrumentalness")
-    private double instrumentalness;
-
-    @CsvBindByName(column = "liveness")
-    private double liveness;
-
-    @CsvBindByName(column = "valence")
-    private double valence;
-
-    @CsvBindByName(column = "tempo")
-    private double tempo;
-
-    @CsvBindByName(column = "time_signature")
-    private int timeSignature;
-
-    // Additional field to store the split artists
+    private Double danceability;
+    private Double energy;
+    private Integer key;
+    private Double loudness;
+    private Integer mode;
+    private Double speechiness;
+    private Double acousticness;
+    private Double instrumentalness;
+    private Double liveness;
+    private Double valence;
+    private Double tempo;
+    private Integer timeSignature;
     private MyList<String> artistList;
 
     public spotifyTrack(String spotifyId, String name, String artists, int dailyRank, int dailyMovement, int weeklyMovement, String country, String snapshotDate, int popularity, boolean isExplicit, int durationMs, String albumName, String albumReleaseDate, double danceability, double energy, int key, double loudness, int mode, double speechiness, double acousticness, double instrumentalness, double liveness, double valence, double tempo, int timeSignature, MyList<String> artistList) {
