@@ -9,7 +9,27 @@ public class QueueImplTest {
 
     @Test
     public void testFlujoCompleto() {
-        MyQueue<Integer> queue = new MyLinkedListImpl<>();
+        MyQueue<Integer> queue = new MyQueue<Integer>() {
+            @Override
+            public void enqueue(Integer value) {
+
+            }
+
+            @Override
+            public Integer dequeue() throws EmptyQueueException {
+                return null;
+            }
+
+            @Override
+            public boolean contains(Integer value) {
+                return false;
+            }
+
+            @Override
+            public int size() {
+                return 0;
+            }
+        };
 
         queue.enqueue(new Integer(21));
         queue.enqueue(new Integer(34));

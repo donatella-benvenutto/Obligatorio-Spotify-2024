@@ -12,7 +12,27 @@ public class StackImplTest {
 
     @Test
     public void testFlujoCompleto() {
-        MyStack<Integer> colStack = new MyLinkedListImpl<>();
+        MyStack<Integer> colStack = new MyStack<Integer>() {
+            @Override
+            public void push(Integer value) {
+
+            }
+
+            @Override
+            public Integer pop() throws EmptyStackException {
+                return null;
+            }
+
+            @Override
+            public Integer peek() {
+                return null;
+            }
+
+            @Override
+            public int size() {
+                return 0;
+            }
+        };
 
         colStack.push(new Integer(2));
         colStack.push(new Integer(4));

@@ -4,7 +4,7 @@ import com.opencsv.bean.CsvBindByName;
 import uy.edu.um.adt.linkedlist.MyList;
 
 public class spotifyTrack {
-    @CsvBindByName(column = "spotify_id")
+    @CsvBindByName(column = "spotify_id,")
     private String spotifyId;
 
     @CsvBindByName(column = "name")
@@ -109,6 +109,9 @@ public class spotifyTrack {
         this.tempo = tempo;
         this.timeSignature = timeSignature;
         this.artistList = artistList;
+    }
+
+    public spotifyTrack() {
     }
 
     public String getSpotifyId() {
@@ -350,5 +353,4 @@ public class spotifyTrack {
                 ", timeSignature=" + timeSignature +
                 '}';
     }
-
 }
