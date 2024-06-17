@@ -1,6 +1,7 @@
 package uy.edu.um.entities;
 
 import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
 import com.opencsv.bean.CsvCustomBindByName;
 import uy.edu.um.CsvReader.QuotedBooleanConverter;
 import uy.edu.um.CsvReader.QuotedDoubleConverter;
@@ -9,10 +10,10 @@ import uy.edu.um.CsvReader.QuotedStringConverter;
 import uy.edu.um.adt.linkedlist.MyList;
 
 public class spotifyTrack {
-    @CsvCustomBindByName(column = "\"spotify_id\"", converter = QuotedStringConverter.class)
+    @CsvBindByPosition(position = 0)
     private String spotifyId;
 
-    @CsvCustomBindByName(column = "\"name\"", converter = QuotedStringConverter.class)
+    @CsvCustomBindByName(column = "name", converter = QuotedStringConverter.class)
     private String name;
 
     @CsvCustomBindByName(column = "\"artists\"", converter = QuotedStringConverter.class)
