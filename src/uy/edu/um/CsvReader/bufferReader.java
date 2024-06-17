@@ -53,13 +53,16 @@ public class bufferReader {
                     if (i > 0 && i < columns.length - 1) {
                         columns[i] = columns[i].replace(",", "&");
                         columns[i] = columns[i].replace(";", "&&");
+                        columns[i] = columns[i].replace("\"", "");
                     }
                     else if(i==0){
                         columns[0] = columns[0].replace(",", "\",");
-                        columns[i] = columns[i].replace(";", "&&");
+                        columns[0] = columns[0].replace(";", "&&");
+                        columns[i] = columns[i].replace("\"\"", "\"");
                     }
                     else if(i == columns.length - 1){
-                        columns[i] = columns[i].replace("\"\"\"", ";");
+                        columns[i] = columns[i].replace("\"\"", ";");
+                        columns[i] = columns[i].replace("\"\"", "\"");
                     }
                     newLine.append(columns[i]);
                     if (i < columns.length - 1) {
