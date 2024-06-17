@@ -1,33 +1,90 @@
 package uy.edu.um.entities;
 
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvCustomBindByName;
+import uy.edu.um.CsvReader.QuotedBooleanConverter;
+import uy.edu.um.CsvReader.QuotedDoubleConverter;
+import uy.edu.um.CsvReader.QuotedIntegerConverter;
+import uy.edu.um.CsvReader.QuotedStringConverter;
 import uy.edu.um.adt.linkedlist.MyList;
 
 public class spotifyTrack {
+    @CsvCustomBindByName(column = "\"spotify_id\"", converter = QuotedStringConverter.class)
     private String spotifyId;
+
+    @CsvCustomBindByName(column = "\"name\"", converter = QuotedStringConverter.class)
     private String name;
+
+    @CsvCustomBindByName(column = "\"artists\"", converter = QuotedStringConverter.class)
     private String artists;
+
+    @CsvCustomBindByName(column = "\"daily_rank\"", required = false, converter = QuotedIntegerConverter.class)
     private Integer dailyRank;
+
+    @CsvCustomBindByName(column = "\"daily_movement\"", required = false, converter = QuotedIntegerConverter.class)
     private Integer dailyMovement;
+
+    @CsvCustomBindByName(column = "\"weekly_movement\"", required = false, converter = QuotedIntegerConverter.class)
     private Integer weeklyMovement;
+
+    @CsvCustomBindByName(column = "\"country\"", required = false, converter = QuotedStringConverter.class)
     private String country;
+
+    @CsvCustomBindByName(column = "\"snapshot_date\"", converter = QuotedStringConverter.class)
     private String snapshotDate;
+
+    @CsvCustomBindByName(column = "\"popularity\"", required = false, converter = QuotedIntegerConverter.class)
     private Integer popularity;
+
+    @CsvCustomBindByName(column = "\"is_explicit\"", required = false, converter = QuotedBooleanConverter.class)
     private Boolean isExplicit;
+
+    @CsvCustomBindByName(column = "\"duration_ms\"", required = false, converter = QuotedIntegerConverter.class)
     private Integer durationMs;
+
+    @CsvCustomBindByName(column = "\"album_name\"", converter = QuotedStringConverter.class)
     private String albumName;
+
+    @CsvCustomBindByName(column = "\"album_release_date\"", converter = QuotedStringConverter.class)
     private String albumReleaseDate;
+
+    @CsvCustomBindByName(column = "\"danceability\"", required = false, converter = QuotedDoubleConverter.class)
     private Double danceability;
+
+    @CsvCustomBindByName(column = "\"energy\"", required = false, converter = QuotedDoubleConverter.class)
     private Double energy;
+
+    @CsvCustomBindByName(column = "\"key\"", required = false, converter = QuotedIntegerConverter.class)
     private Integer key;
+
+    @CsvCustomBindByName(column = "\"loudness\"", required = false, converter = QuotedDoubleConverter.class)
     private Double loudness;
+
+    @CsvCustomBindByName(column = "\"mode\"", required = false, converter = QuotedIntegerConverter.class)
     private Integer mode;
+
+    @CsvCustomBindByName(column = "\"speechiness\"", required = false, converter = QuotedDoubleConverter.class)
     private Double speechiness;
+
+    @CsvCustomBindByName(column = "\"acousticness\"", required = false, converter = QuotedDoubleConverter.class)
     private Double acousticness;
+
+    @CsvCustomBindByName(column = "\"instrumentalness\"", required = false, converter = QuotedDoubleConverter.class)
     private Double instrumentalness;
+
+    @CsvCustomBindByName(column = "\"liveness\"", required = false, converter = QuotedDoubleConverter.class)
     private Double liveness;
+
+    @CsvCustomBindByName(column = "\"valence\"", required = false, converter = QuotedDoubleConverter.class)
     private Double valence;
+
+    @CsvCustomBindByName(column = "\"tempo\"", required = false, converter = QuotedDoubleConverter.class)
     private Double tempo;
+
+    @CsvCustomBindByName(column = "\"time_signature\"", required = false, converter = QuotedIntegerConverter.class)
     private Integer timeSignature;
+
+    // Additional field to store the split artists
     private MyList<String> artistList;
 
     public spotifyTrack(String spotifyId, String name, String artists, int dailyRank, int dailyMovement, int weeklyMovement, String country, String snapshotDate, int popularity, boolean isExplicit, int durationMs, String albumName, String albumReleaseDate, double danceability, double energy, int key, double loudness, int mode, double speechiness, double acousticness, double instrumentalness, double liveness, double valence, double tempo, int timeSignature, MyList<String> artistList) {
@@ -67,6 +124,7 @@ public class spotifyTrack {
     }
 
     public void setSpotifyId(String spotifyId) {
+        System.out.println("Setting spotifyId: " + spotifyId);
         this.spotifyId = spotifyId;
     }
 
