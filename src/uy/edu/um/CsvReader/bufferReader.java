@@ -54,6 +54,7 @@ public class bufferReader {
                         columns[i] = columns[i].replace(",", "&");
                         columns[i] = columns[i].replace(";", "&&");
                         columns[i] = columns[i].replace("\"", "");
+                        columns[i] =columns[i].substring(0, columns[i].length() - 1);
                     }
                     else if(i==0){
                         columns[0] = columns[0].replace(",", "\",");
@@ -61,7 +62,7 @@ public class bufferReader {
                         columns[i] = columns[i].replace("\"\"", "\"");
                     }
                     else if(i == columns.length - 1){
-                        columns[i] = columns[i].replace("\"\"", ";");
+                        columns[i] = columns[i].replace("\"\"\"", ";");
                         columns[i] = columns[i].replace("\"\"", "\"");
                     }
                     newLine.append(columns[i]);
