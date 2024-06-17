@@ -17,8 +17,8 @@ public class bufferReader {
 
             String line;
             while ((line = br.readLine()) != null) {
-                // Replace all occurrences of (";;) at the end of a row with a comma (,)
-                if (line.endsWith("\";;")) {
+                // Replace all occurrences of (;;) at the end of a row with a comma (;)
+                if (line.endsWith(";;")) {
                     line = line.substring(0, line.length() - 3) + ";";
                 }
 
@@ -28,8 +28,8 @@ public class bufferReader {
 
                 while (matcher.find()) {
                     String group = matcher.group(1);
-                    if (group.contains("\";;")) {
-                        group = group.replace("\";;", ";");
+                    if (group.contains(";;")) {
+                        group = group.replace(";;", ";");
                     }
                     if (group.contains(",")) {
                         group = group.replace("\",\"", ",");
@@ -61,8 +61,10 @@ public class bufferReader {
                         columns[0] = columns[0].substring(0, columns[0].length() - 1);
 
                     } else if (i == columns.length - 1) {
-                        columns[i] = columns[i].replace("\"\"\"", ";");
-                        columns[i] = columns[i].replace("\"\"", "\"");
+                        columns[i] = columns[i].replace("\"", "");
+                        columns[i] = columns[i].replace(";", "");
+                        columns[i] = columns[i].concat("\"");
+                        columns[i] = columns[i].concat(";");
                     }
                     newLine.append(columns[i]);
                     if (i < columns.length - 1) {

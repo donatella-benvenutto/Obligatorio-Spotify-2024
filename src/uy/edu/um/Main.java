@@ -48,7 +48,7 @@ public class Main {
                         .build();
 
                 List<spotifyTrack> tracks = csvToBean.parse();
-                System.out.print(tracks);
+                System.out.println(tracks);
                 for (spotifyTrack track : tracks) {
                     String name = track.getName();
                     if (name != null) {
